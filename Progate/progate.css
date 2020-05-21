@@ -57,12 +57,13 @@ body{
 .c-set{
   width:33.33%;
   margin: 0 2vh;
-  text-align: center;
+
 }
 
 .c-book-title{
   background-color: #2e2e2e;
   color:white;
   border-bottom: 2px solid white;
-  border-top: 2px solid white
+  border-top: 2px solid white;
+  text-align: center;
 }
