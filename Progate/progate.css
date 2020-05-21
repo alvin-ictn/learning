@@ -1,0 +1,45 @@
+body{
+  font-family: 'Courier New', Courier, monospace;
+}
+.progate-main-content{
+  display: flex;
+  flex-direction: column;
+}
+
+.c-book,.c-result,.c-title{
+  display:flex;
+  flex-direction: row;
+}
+
+.title{
+  display:flex;
+  width:33.33%;
+  background-color: #2e2e2e;
+  color:white;
+  padding:2vh;
+  margin:2vh;
+  font-weight:bold;
+  font-size:3vh;
+  justify-content: space-evenly;
+}
+
+.codebook{
+  width:33.33%;
+  height:300px;
+  overflow:scroll;
+  background-color: #2e2e2e;
+  color:white;
+  padding:2vh;
+  margin:2vh;
+}
+
+.coderesult{
+  width:33.33%;
+  border:1px solid black;
+  padding:2vh;
+  margin:2vh;
+}
+
+.comment{
+  color: #8f8f8f;
+}
