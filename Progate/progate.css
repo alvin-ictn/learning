@@ -24,13 +24,18 @@ body{
 }
 
 .codebook{
-  width:33.33%;
+  width:100%;
   height:300px;
-  overflow:scroll;
+  overflow-y:scroll;
+  overflow-x:hidden;
+  word-break: break-word;
   background-color: #2e2e2e;
   color:white;
-  padding:2vh;
-  margin:2vh;
+
+}
+
+.codebook::-webkit-scrollbar {
+  display: none;
 }
 
 .coderesult{
@@ -38,6 +43,7 @@ body{
   border:1px solid black;
   padding:2vh;
   margin:2vh;
+  
 }
 
 .comment{
@@ -46,4 +52,17 @@ body{
 
 .progate-element-color{
   color:rgb(38, 139, 197)
+}
+
+.c-set{
+  width:33.33%;
+  margin: 0 2vh;
+  text-align: center;
+}
+
+.c-book-title{
+  background-color: #2e2e2e;
+  color:white;
+  border-bottom: 2px solid white;
+  border-top: 2px solid white
 }
