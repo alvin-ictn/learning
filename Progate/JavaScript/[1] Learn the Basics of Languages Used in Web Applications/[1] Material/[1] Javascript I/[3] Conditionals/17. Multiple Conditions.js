@@ -1,5 +1,9 @@
 console.log(" I n i t i a l   C o d e");
 console.log("=========================");
+const age = 24;
+
+// Add an if statement with the specified conditions
+
 
 
 
