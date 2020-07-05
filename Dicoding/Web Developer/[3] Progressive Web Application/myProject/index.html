@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>alvin.Tech Shop</title>
+  <meta name="description" content="My first PWA"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/materialize.min.css">
+  <link rel="stylesheet" href="css/signal.css" />
+  <link rel="manifest" href="/manifest.json">
+  <meta name="theme-color" content="#00897B"/>
+</head>
+<body>
+  <nav class="light-blue darken-3" role="navigation">
+    <div class="nav-wrapper container">
+      <a href="#" class="brand-logo" id="logo-container">alvin.Tech</a>
+      <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+      <ul class="topnav right hide-on-med-and-down"></ul>
+      <ul class="sidenav" id="nav-mobile"></ul>
+    </div>
+  </nav>
+  <main>
+    <div class="container" id="body-content"></div>
+    <div class="notif">
+      <div class="signal"></div>
+      <div class="main-text">
+        <p class="status">Checking Connection . . .</p>
+      </div>
+      <div class="loading">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
+  </main>
+  <footer class="light-blue darken-3">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Overview</h5>
+          <p class="grey-text text-lighten-4">alvin.Tech Comptuer Shop menyediakan komputer, laptop, gadget, dan aksesori terlengkap. Berbagai produk original tersedia untuk menunjang aktivitas harian, peralatan dapur dan rumah tangga, hingga bisnis atau kebutuhan profesional di kantor maupun tempat usaha. Beragam keperluan IT dan telekomunikasi, perangkat elektronik, sampai hobi dan perawatan tubuh ada di sini, disediakan oleh lebih dari 9.000 supplier. alvin.Tech Comptuer Shop juga telah menjadi Apple Authorized Reseller (AAR), atau pemasar resmi untuk semua produk Apple.</p>
+        </div>
+        <div class="col l4 offset-l2 s12">
+          <h5 class="white-text">Links</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="https://github.com/alvin-ictn">Github</a></li>
+            <li><a class="grey-text text-lighten-3" href="https://facebook.com/alvin.mtv">Facebook</a></li>
+            <li><a class="grey-text text-lighten-3" href="mailto:alvin.ictn@gmail.com">alvin.ictn@gmail.com</a></li>
+            <li><a class="grey-text text-lighten-3" href="http://altov.tech">Site</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      © 2020 Copyright Alvin Mantovani
+     
+      </div>
+    </div>
+  </footer>
+  <script src="js/materialize.js"></script>
+  <script src="js/nav.js"></script>
+  <script src="js/signal.js"></script>
+  <script>
+    // REGISTER SERVICE WORKER
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", function() {
+        navigator.serviceWorker
+          .register("/service-worker.js")
+          .then(function() {
+            console.log("Pendaftaran ServiceWorker berhasil");
+          })
+          .catch(function() {
+            console.log("Pendaftaran ServiceWorker gagal");
+          });
+      });
+    } else {
+      console.log("ServiceWorker belum didukung browser ini.");
+    }
+  </script>
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function() {
+    var elems = document.querySelectorAll('.materialboxed');
+    var instances = M.Materialbox.init(elems);
+  });
+  </script>
+</body>
+</html>

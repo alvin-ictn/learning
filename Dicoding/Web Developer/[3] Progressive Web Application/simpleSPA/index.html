@@ -11,18 +11,19 @@
 </head>
 <body>
   <!-- Navigasi -->
-  <nav class="teal lighten-1" role="navigation">
-    <div class="nav-wrapper container">
-      <a href="#" class="brand-logo" id="logo-container">My App</a>
-      <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
-      
-      <ul class="topnav right hide-on-med-and-down"></ul>
-      <ul class="sidenav" id="nav-mobile"></ul>
-    </div>
-  </nav>
-  <!-- Akhir Navigasi -->
+    <nav class="teal lighten-1" role="navigation">
+      <div class="nav-wrapper container">
+        <a href="#" class="brand-logo" id="logo-container">News Reader</a>
+        <a href="#" class="sidenav-trigger" data-target="nav-mobile">☰</a>
+        <ul class="topnav right hide-on-med-and-down"></ul>
+        <ul class="sidenav" id="nav-mobile"></ul>
+      </div>
+    </nav>
+    <!-- Akhir Navigasi -->
   <div class="container" id="body-content"></div>
+  <script type="text/javascript" src="https://unpkg.com/snarkdown@1.0.2/dist/snarkdown.umd.js"></script>
   <script src="js/materialize.min.js"></script>
+  <script src="js/api.js"></script>
   <script src="js/nav.js"></script>
   <script>
     // REGISTER SERVICE WORKER
@@ -40,6 +41,11 @@
     } else {
       console.log("ServiceWorker belum didukung browser ini.");
     }
+
+       // REQUEST API UNTUK PERTAMA KALI
+      document.addEventListener("DOMContentLoaded", function() {
+          getArticles();
+      });
   </script>
 </body>
 </html>
