@@ -8,10 +8,13 @@
     <link rel="stylesheet" href="css/materialize.min.css" />
     <link rel="manifest" href="/manifest.json" />
     <meta name="theme-color" content="#00897B" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
   </head>
   <body>
-       <!-- Navigasi -->
+    <!-- Navigasi -->
     <nav class="teal lighten-1" role="navigation">
       <div class="nav-wrapper container">
         <a href="#" class="brand-logo" id="logo-container">News Reader</a>
@@ -21,13 +24,13 @@
         <ul class="topnav right hide-on-med-and-down"></ul>
         <ul class="sidenav" id="nav-mobile"></ul>
       </div>
-      
-    </nav>  
+    </nav>
     <!-- Akhir Navigasi -->
+
     <div class="container" id="body-content"></div>
     <div class="fixed-action-btn">
       <a class="btn-floating btn-large red" id="save">
-        <i class="large material-icons">save</i>
+      <i class="large material-icons">save</i>
       </a>
     </div>
     <script
@@ -39,26 +42,6 @@
     <script src="js/idb.js"></script>
     <script src="js/db.js"></script>
     <script>
-      document.addEventListener("DOMContentLoaded", function() {
-      var urlParams = new URLSearchParams(window.location.search);
-      var isFromSaved = urlParams.get("saved");
-      var btnSave = document.getElementById("save");
-      if (isFromSaved) {
-        // Hide fab jika dimuat dari indexed db
-        btnSave.style.display = 'none';
-        
-        // ambil artikel lalu tampilkan
-        getSavedArticleById();
-      } else {
-        var item = getArticleById();
-      }
-      btnSave.onclick = function() {
-        console.log("Tombol FAB di klik.");
-        item.then(function(article) {
-          saveForLater(article);
-        });
-      };
-    });
       // REGISTER SERVICE WORKER
       if ("serviceWorker" in navigator) {
         window.addEventListener("load", function() {
@@ -75,8 +58,25 @@
         console.log("ServiceWorker belum didukung browser ini.");
       }
       document.addEventListener("DOMContentLoaded", function() {
-        getArticleById();
-    });
+        var urlParams = new URLSearchParams(window.location.search);
+        var isFromSaved = urlParams.get("saved");
+        var btnSave = document.getElementById("save");
+        if (isFromSaved) {
+          // Hide fab jika dimuat dari indexed db
+          btnSave.style.display = 'none';
+          
+          // ambil artikel lalu tampilkan
+          getSavedArticleById();
+        } else {
+          var item = getArticleById();
+        }
+        btnSave.onclick = function() {
+          console.log("Tombol FAB di klik.");
+          item.then(function(article) {
+            saveForLater(article);
+          });
+        };
+      });
     </script>
   </body>
 </html>
